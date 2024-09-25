@@ -1,4 +1,4 @@
-function Searchbar() {
+function SearchBar() {
   return (
     <div className="flex flex-row justify-between my-auto">
       <input
@@ -26,4 +26,4 @@ function Searchbar() {
   );
 }
 
-export default Searchbar;
+export default SearchBar;
