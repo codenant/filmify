@@ -7,3 +7,7 @@
 .social {
   @apply text-flatWhite w-[24px] h-[24px];
 }
+
+.authButton {
+  @apply font-poppins text-xl text-flatWhite;
+}

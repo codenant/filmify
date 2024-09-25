@@ -10,8 +10,8 @@ function Header() {
       </div>
       <Searchbar />
       <div className="my-auto m-8">
-        <button className="font-poppins text-xl text-flatWhite">sign in</button>
-        <button className="font-poppins text-xl text-flatWhite border-2 border-mango hover:bg-mango transition duration-300 ease-in-out rounded-[50px] p-[6px] ml-4">
+        <button className="authButton">sign in</button>
+        <button className="authButton border-2 border-mango hover:bg-mango transition duration-300 ease-in-out rounded-[50px] p-[6px] ml-4">
           sign up
         </button>
       </div>
