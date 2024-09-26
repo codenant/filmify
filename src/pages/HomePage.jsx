@@ -28,14 +28,16 @@ function HomePage() {
               <img
                 src={film.Poster}
                 alt={film.Title}
-                className="w-[173px] h-[256px] shadow-md hover:scale-105 transition duration-300 ease-in-out object-cover"
+                className="w-[173px] h-[256px] shadow-md rounded-md hover:scale-105 transition duration-300 ease-in-out object-cover"
               />
             </Link>
           </div>
           <div className="w-[173px] mt-2">
-            <h2 className="font-lato text-flatWhite font-semibold text-sm">
-              {film.Title}
-            </h2>
+            <Link to={`/details/${film.imdbID}`}>
+              <h2 className="font-lato text-flatWhite font-semibold text-sm hover:text-mySlate hover:opacity-70 transition duration-200 ease-in-out">
+                {film.Title}
+              </h2>
+            </Link>
             <p className="font-lato text-mySlate opacity-35">{film.Year}</p>
           </div>
         </div>
