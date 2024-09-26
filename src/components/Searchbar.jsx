@@ -1,9 +1,16 @@
+import useFilmStore from "../stores/filmStore";
+import { useState } from "react";
+
 function SearchBar() {
+  let { searchInput, setSearchInput, fetchFilms } = useFilmStore();
+
   return (
     <div className="flex flex-row justify-between my-auto">
       <input
         type="text"
-        placeholder="search your favorite films"
+        placeholder="find your favorite films"
+        value={searchInput}
+        onChange={(e) => setSearchInput(e.target.value)} // accessing input values
         className="w-[726px] h-[45px] border-[1px] border-flatBlack rounded-[55px] bg-faded placeholder:text-mySlate placeholder:opacity-20 text-mySlate p-2"
       />
       <svg
