@@ -4,10 +4,29 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  background-color: #242424;
+}
+
 .social {
   @apply text-flatWhite w-[24px] h-[24px];
 }
 
 .authButton {
   @apply font-poppins text-xl text-flatWhite;
+}
+
+.rating {
+  @apply text-mySlate text-xl opacity-50;
+}
+.ratingContainer {
+  @apply flex flex-row gap-5;
+}
+
+.detailHeading {
+  @apply font-lato text-flatWhite font-semibold text-xl;
+}
+.detailPara {
+  @apply font-serif text-mySlate opacity-50 text-xl pb-5;
 }
