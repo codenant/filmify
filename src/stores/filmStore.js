@@ -15,6 +15,7 @@ const randomPopular = () => {
   return popularFilms[randomIndex];
 };
 
+// start of state management
 const useFilmStore = create((set) => ({
   displayFilms: [], // films to display on the landing page
   filmDetails: null, // display film details
@@ -25,6 +26,15 @@ const useFilmStore = create((set) => ({
 
   isLoading: false,
   isError: null,
+
+  // add/remove favorites functionality
+  favorites: [],
+  addFavorite: (film) =>
+    set((state) => ({ favorites: [...state.favorites, film] })),
+  removeFavorite: (imdbID) =>
+    set((state) => ({
+      favorites: state.favorites.filter((film) => film.imdbID !== imdbID),
+    })),
 
   // calling the api for random popular films using async/await
   fetchPopular: async () => {
@@ -39,7 +49,7 @@ const useFilmStore = create((set) => ({
 
       set({ displayFilms: data.Search }); // store fetched popular films
     } catch (error) {
-      set({ isError: error.message });
+      set({ isError: "Oh no, looks like we can't find relevant titles" });
     } finally {
       set({ isLoading: false }); // set the loading back to false after data is fetched
     }
@@ -47,7 +57,7 @@ const useFilmStore = create((set) => ({
 
   // calling the api to display films based on user input
   fetchFilms: async (searchInput) => {
-    set({ isLoading: true });
+    set({ isLoading: true, isError: null }); // set initial states
 
     try {
       const response = await fetch(
@@ -55,17 +65,24 @@ const useFilmStore = create((set) => ({
       );
       const data = await response.json();
 
-      set({ searchFilms: data.Search }); // store fetched films according to user input
+      if (data.Response === "True") {
+        set({ searchFilms: data.Search }); // store fetched films according to user input
+      } else {
+        set({
+          searchFilms: [], // clear previous search results
+          isError: "Keep typing or check your spelling.",
+        });
+      }
     } catch (error) {
-      set({ isError: error.message });
+      set({ isError: "Oh no, something might've went wrong." });
     } finally {
       set({ isLoading: false });
     }
   },
 
-  // calling api to display films on user input through film's ID
+  // calling api to display film details
   fetchDetails: async (imdbID) => {
-    set({ isLoading: true });
+    set({ isLoading: true, isError: null });
 
     try {
       const response = await fetch(
@@ -75,7 +92,7 @@ const useFilmStore = create((set) => ({
 
       set({ filmDetails: data }); // store fetched film details
     } catch (error) {
-      set({ isError: error.message });
+      set({ isError: "Oh no, looks like no film details are available" });
     } finally {
       set({ isLoading: false });
     }
