@@ -13,10 +13,6 @@ body {
   @apply text-flatWhite w-[24px] h-[24px];
 }
 
-.authButton {
-  @apply font-poppins text-xl text-flatWhite;
-}
-
 .rating {
   @apply text-mySlate text-xl opacity-50;
 }
@@ -29,4 +25,12 @@ body {
 }
 .detailPara {
   @apply font-serif text-mySlate opacity-50 text-xl pb-5;
+}
+
+.errorMessage {
+  @apply h-[90vh] font-lato font-semibold text-mySlate text-5xl flex justify-center items-center;
+}
+
+.favButton {
+  @apply text-flatWhite transition duration-300 ease-in-out;
 }
