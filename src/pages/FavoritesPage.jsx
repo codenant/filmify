@@ -4,7 +4,6 @@ import FilmCard from "../components/FilmCard";
 function FavoritesPage() {
   const { favorites } = useFilmStore();
 
-  console.log(favorites);
   return (
     <div className="h-fit">
       {favorites.length === 0 ? (
