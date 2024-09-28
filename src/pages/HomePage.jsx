@@ -29,10 +29,19 @@ function HomePage() {
       {isLoading ? (
         <PreLoader />
       ) : (
-        <div className="grid grid-cols-4 px-12 py-8 gap-8">
-          {display?.map((film) => (
-            <FilmCard film={film} />
-          ))}
+        <div>
+          <h1
+            className={`${
+              searchInput === "" ? "block" : "hidden"
+            } font-bold font-lato text-flatWhite text-2xl md:pl-14 pt-10 text-center md:text-left`}
+          >
+            Timeless Movies
+          </h1>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-12 py-8 gap-8">
+            {display?.map((film) => (
+              <FilmCard film={film} key={film.imdbID} />
+            ))}
+          </div>
         </div>
       )}
       {isError && <div className="errorMessage">{isError}</div>}
