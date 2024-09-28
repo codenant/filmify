@@ -38,6 +38,11 @@ function FilmCard({ film }) {
           </Link>
           <p className="font-lato text-mySlate opacity-35">{film.Year}</p>
         </div>
+        <span className="sr-only">
+          {favorites.some((fav) => fav.imdbID === film.imdbID)
+            ? "Click to unfavorite"
+            : "Click to favorite"}
+        </span>
         <Heart
           onClick={() => toggleFavorite(film)}
           className={

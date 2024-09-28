@@ -48,6 +48,7 @@ function FilmDetails() {
                 />
                 <div className="flex flex-col gap-2 mt-8">
                   <div className="ratingContainer">
+                    <span className="sr-only">IMDB Rating</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 448 512"
@@ -58,6 +59,7 @@ function FilmDetails() {
                     <p className="rating">{filmDetails.imdbRating}</p>
                   </div>
                   <div className="ratingContainer">
+                    <span className="sr-only">Rotten Tomatoes Rating</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 1024 1176.463"

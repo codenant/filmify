@@ -75,6 +75,7 @@ function Header() {
         <SearchBar className="hidden md:block px-8" />
         <div className="flex flex-row gap-8 font-bold text-flatWhite my-auto m-8">
           <Link to="/favorites">
+            <span className="sr-only">Favorites Page</span>
             <Heart
               className="hidden md:block h-[40px] w-[40px] hover:fill-mango hover:stroke-mango dark:text-mango"
               onClick={handleClear}
