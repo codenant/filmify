@@ -39,7 +39,7 @@ const useFilmStore = create((set) => ({
   // calling the api for random popular films using async/await
   fetchPopular: async () => {
     const popularTitles = randomPopular(); // invoking the randomness
-    set({ isLoading: true });
+    set({ isLoading: true, isError: null }); // set initial states
 
     try {
       const response = await fetch(
@@ -57,7 +57,7 @@ const useFilmStore = create((set) => ({
 
   // calling the api to display films based on user input
   fetchFilms: async (searchInput) => {
-    set({ isLoading: true, isError: null }); // set initial states
+    set({ isLoading: true, isError: null });
 
     try {
       const response = await fetch(
