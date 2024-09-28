@@ -10,9 +10,9 @@ function FavoritesPage() {
       {favorites.length === 0 ? (
         <p className="errorMessage">Hmm, this page looks a little empty.</p>
       ) : (
-        <div className="grid grid-cols-4 px-12 py-8 gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-12 py-8 gap-8">
           {favorites.map((film) => (
-            <FilmCard film={film} />
+            <FilmCard film={film} key={film.imdbID} />
           ))}
         </div>
       )}

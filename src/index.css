@@ -14,21 +14,21 @@ body {
 }
 
 .rating {
-  @apply text-mySlate text-xl opacity-50;
+  @apply text-mySlate text-2xl md:text-xl opacity-50;
 }
 .ratingContainer {
   @apply flex flex-row gap-5;
 }
 
 .detailHeading {
-  @apply font-lato text-flatWhite font-semibold text-xl;
+  @apply font-lato text-flatWhite font-semibold text-[22px] md:text-2xl;
 }
 .detailPara {
-  @apply font-serif text-mySlate opacity-50 text-xl pb-5;
+  @apply font-serif text-mySlate opacity-50 text-[22px] md:text-2xl pb-5;
 }
 
 .errorMessage {
-  @apply h-[90vh] font-lato font-semibold text-mySlate text-5xl flex justify-center items-center;
+  @apply h-[90vh] font-lato font-semibold text-mySlate text-3xl md:text-5xl flex justify-center items-center;
 }
 
 .favButton {

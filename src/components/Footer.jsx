@@ -4,7 +4,7 @@ import XIcon from "@mui/icons-material/X";
 
 function Footer() {
   return (
-    <div className="w-full h-[120px] bg-flatBlack flex flex-row justify-between items-center p-14">
+    <div className="w-full h-[120px] bg-flatBlack flex flex-col md:flex-row justify-evenly md:justify-between items-center md:p-14">
       <div className="tracking-wide">
         <p className="font-poppins text-flatWhite">
           &copy; filmify by{" "}

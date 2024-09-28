@@ -6,7 +6,7 @@ function FilmCard({ film }) {
   const { favorites, addFavorite, removeFavorite } = useFilmStore();
 
   const toggleFavorite = (film) => {
-    // "some" method to check the entire object
+    // using the "some" method to check the entire object
     const included = favorites.some((fav) => fav.imdbID === film.imdbID);
     if (included) {
       removeFavorite(film.imdbID);
@@ -14,6 +14,7 @@ function FilmCard({ film }) {
       addFavorite(film);
     }
   };
+
   return (
     <div
       key={film.imdbID}
@@ -24,14 +25,14 @@ function FilmCard({ film }) {
           <img
             src={film.Poster}
             alt={film.Title}
-            className="w-[173px] h-[256px] shadow-md rounded-md hover:scale-105 transition duration-300 ease-in-out object-cover"
+            className="w-[225px] h-[360px] md:w-[173px] md:h-[256px] shadow-md rounded-md hover:scale-105 transition duration-300 ease-in-out object-cover"
           />
         </Link>
       </div>
-      <div className="w-[173px] mt-2 flex flex-row gap-5 justify-between">
+      <div className="w-[225px] md:w-[173px] mt-4 flex flex-row gap-5 justify-between">
         <div className="flex flex-col">
           <Link to={`/details/${film.imdbID}`}>
-            <h2 className="font-lato text-flatWhite font-semibold text-sm hover:text-mySlate hover:opacity-70 transition duration-200 ease-in-out">
+            <h2 className="font-lato text-flatWhite font-semibold text-lg md:text-sm hover:text-mySlate hover:opacity-70 transition duration-200 ease-in-out">
               {film.Title}
             </h2>
           </Link>
@@ -41,8 +42,8 @@ function FilmCard({ film }) {
           onClick={() => toggleFavorite(film)}
           className={
             favorites.some((fav) => fav.imdbID === film.imdbID)
-              ? "favButton w-[20px] h-[20px] fill-flatWhite object-cover"
-              : "favButton w-[20px] h-[20px] fill-none object-cover"
+              ? "favButton w-[30px] h-[30px] md:w-[20px] md:h-[20px] fill-flatWhite object-cover"
+              : "favButton w-[30px] h-[30px] md:w-[20px] md:h-[20px] fill-none object-cover"
           }
         />
       </div>
