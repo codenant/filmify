@@ -1,5 +1,7 @@
 # Filmify - a Movie Information Library
 
+![Screenshot of the web application landing page on desktop](./src/assets/filmify_landing_page.png)
+
 ## Description
 
 Filmify is a front-end web application that allows users to explore movies through a movie title search functionality and display detailed information such as: year of make, plot summary, cast, and ratings.
@@ -30,25 +32,25 @@ To run this project locally, ensure to install the following:
 
 ```bash
 git clone https://github.com/codenant/filmify.git
-cd filmify;
+cd filmify
 ```
 
 2. **Install dependencies**
 
 ```bash
-npm install;
+npm install
 ```
 
 3. **Register for an OMDb API key and follow these steps for set up**
    - Create a .env file at the root of the project
    - Add your OMDb API key in the following format:
    ```bash
-   VITE_API_KEY=your_api_key_here;
+   VITE_API_KEY=your_api_key_here
    ```
 4. **Run the development server**
 
 ```bash
-npm run dev;
+npm run dev
 ```
 
 ## Dependencies
@@ -56,5 +58,5 @@ npm run dev;
 - **React**
 - **React Router**
 - **Tailwind CSS**
-- **React Spinners:** For preloading
-- **Material UI** Icons
+- **React Spinners** for preloading
+- **Material UI** icons
