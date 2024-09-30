@@ -85,7 +85,7 @@ function Header() {
       </div>
 
       {isOpen ? (
-        <div className="md:hidden absolute top-28 flex flex-col gap-8 justify-center items-center bg-inherit w-full rounded-br-xl rounded-bl-xl pb-10 shadow-md">
+        <div className="md:hidden absolute top-28 flex flex-col gap-8 justify-center items-center bg-inherit w-full rounded-br-xl rounded-bl-xl pb-10 shadow-md z-10">
           <SearchBar />
           <div className="text-flatWhite my-auto m-8">
             <Link to="/favorites">
