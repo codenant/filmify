@@ -27,14 +27,22 @@ const useFilmStore = create((set) => ({
   isLoading: false,
   isError: null,
 
-  // add/remove favorites functionality
-  favorites: [],
+  // add/remove favorites functionality with local storage syncing
+  favorites: JSON.parse(localStorage.getItem("favorites") || []),
   addFavorite: (film) =>
-    set((state) => ({ favorites: [...state.favorites, film] })),
+    set((state) => {
+      const addedFavorites = [...state.favorites, film];
+      localStorage.setItem("favorites", JSON.stringify(addedFavorites));
+      return { favorites: addedFavorites };
+    }),
   removeFavorite: (imdbID) =>
-    set((state) => ({
-      favorites: state.favorites.filter((film) => film.imdbID !== imdbID),
-    })),
+    set((state) => {
+      const removedFavorites = state.favorites.filter(
+        (film) => film.imdbID !== imdbID
+      );
+      localStorage.setItem("favorites", JSON.stringify(removedFavorites));
+      return { favorites: removedFavorites };
+    }),
 
   // calling the api for random popular films using async/await
   fetchPopular: async () => {
