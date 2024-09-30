@@ -28,7 +28,7 @@ const useFilmStore = create((set) => ({
   isError: null,
 
   // add/remove favorites functionality with local storage syncing
-  favorites: JSON.parse(localStorage.getItem("favorites") || []),
+  favorites: JSON.parse(localStorage.getItem("favorites") || "[]"),
   addFavorite: (film) =>
     set((state) => {
       const addedFavorites = [...state.favorites, film];
