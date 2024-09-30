@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-const apiKey = import.meta.env.VITE_API_KEY; // accessing api key without exposing it
+// const apiKey = import.meta.env.VITE_API_KEY; // accessing api key without exposing it
 
 // random popular films to display on the homepage
 const popularFilms = [
@@ -51,7 +51,9 @@ const useFilmStore = create((set) => ({
 
     try {
       const response = await fetch(
-        `https://www.omdbapi.com/?s=${popularTitles}&type=movie&apikey=${apiKey}&`
+        `https://www.omdbapi.com/?s=${popularTitles}&type=movie&apikey=${
+          import.meta.env.VITE_API_KEY
+        }&`
       );
       const data = await response.json();
 
@@ -69,7 +71,9 @@ const useFilmStore = create((set) => ({
 
     try {
       const response = await fetch(
-        `https://www.omdbapi.com/?s=${searchInput}&type=movie&apikey=${apiKey}&`
+        `https://www.omdbapi.com/?s=${searchInput}&type=movie&apikey=${
+          import.meta.env.VITE_API_KEY
+        }&`
       );
       const data = await response.json();
 
@@ -94,7 +98,9 @@ const useFilmStore = create((set) => ({
 
     try {
       const response = await fetch(
-        `https://www.omdbapi.com/?i=${imdbID}&apikey=${apiKey}&`
+        `https://www.omdbapi.com/?i=${imdbID}&apikey=${
+          import.meta.env.VITE_API_KEY
+        }&`
       );
       const data = await response.json();
 
