@@ -55,7 +55,7 @@ npm run dev
 
 ## Dependencies
 
-- **React**
+- **React + Vite**
 - **React Router**
 - **Tailwind CSS**
 - **React Spinners** for preloading
